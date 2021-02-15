@@ -1,11 +1,11 @@
-import './Button.css'
-import './Input.css'
+import Button from './Button/Button'
+import Inputfield from './Form'
 
-export default function Form({ inputId, placeholdertext, buttontext }) {
+export default function Form() {
     return (
-        <label htmlFor={inputId}>
-            <input type="text" id={inputId} placeholder={placeholdertext}></input>
-            <button>{buttontext}</button>
-        </label>
+        <form>
+            <Inputfield type="text" label="Add Item to Your Shopping List" placeholder="Add your Item here..." />
+            <Button type="submit" text="Add to List" />
+        </form>
     )
 }
