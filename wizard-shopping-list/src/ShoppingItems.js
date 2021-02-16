@@ -1,4 +1,4 @@
-export default function ListItem({ isDone = false, item }) {
+export default function ShoppingItems({ isDone = false, item }) {
     return (
         <li>
             <label htmlFor={item}>
