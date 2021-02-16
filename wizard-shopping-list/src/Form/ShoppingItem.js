@@ -1,9 +1,9 @@
-export default function ShoppingItems({ isDone = false, item }) {
+export default function ShoppingItem({ isDone, title }) {
     return (
         <li>
-            <label htmlFor={item}>
+            <label htmlFor={title}>
                 <input type="checkbox" checked={isDone} />
-                {item}
+                {title}
             </label>
         </li>
     )

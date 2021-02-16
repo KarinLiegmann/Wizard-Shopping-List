@@ -1,31 +1,17 @@
+import { useState } from 'react'
+
 import './App.css'
 import Headline from './Headline'
 import Form from './Form/Form'
-import ShoppingList from './ShoppingList'
+import ShoppingList from './Form/ShoppingList'
 
 function App() {
-  const shoppingItems = [
-    {
-      item: "broomstick",
-      isDone: false
-    },
-    {
-      item: "wand",
-      isDone: true
-    },
-    {
-      item: "invisibility cloak",
-      isDone: false
-    },
-    {
-      item: "butterbeer",
-      isDone: true
-    }
-  ]
+  const [shoppingItems, setShoppingItems] = useState([])
 
-  function addShoppingItem(item) {
-    const shoppingItem = { item, isDone: false }
-    shoppingItems.push(shoppingItem)
+
+  function addShoppingItem(title) {
+    const newShoppingItem = { title, isDone: false }
+    setShoppingItems([...shoppingItems, newShoppingItem]);
   }
 
 
@@ -33,7 +19,7 @@ function App() {
     <div className="App">
       <Headline name="Harry" />
       <Form onCreateShoppingItem={addShoppingItem} />
-      <ShoppingList ShoppingItems={ShoppingItem} />
+      <ShoppingList shoppingItems={shoppingItems} />
     </div>
   );
 }
