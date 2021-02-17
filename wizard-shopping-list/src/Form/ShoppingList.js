@@ -1,8 +1,8 @@
-import './ShoppingList.css'
+// import './ShoppingList.css'
 
-import ShoppingItem from './ShoppingItem'
+// import ShoppingItem from './ShoppingItem'
 
-export default function ShoppingList({ items, onToggleItem }) {
+/* export default function ShoppingList({ items, onToggleItem }) {
     return (
         <section>
         {items.map((shoppingItem,index) => (<ShoppingItem 
@@ -13,4 +13,4 @@ export default function ShoppingList({ items, onToggleItem }) {
         ))}
         </section>
         )
-}
+} */

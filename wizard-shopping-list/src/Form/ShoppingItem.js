@@ -1,10 +1,10 @@
-export default function ShoppingItem({ isDone, title, toggleCheckbox }) {
+import './ShoppingList.css'
+
+export default function ShoppingItem({ isDone, title, onToggleItem }) {
     return (
-        <li>
-            <label htmlFor={title}>
-                <input type="checkbox" checked={isDone} onChange={toggleCheckbox} />
-                {title}
-            </label>
+        <li>            
+                <input type="checkbox" checked={isDone} onChange={onToggleItem} />
+                {title}            
         </li>
     )
 }

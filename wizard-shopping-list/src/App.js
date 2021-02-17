@@ -3,7 +3,8 @@ import { useState } from 'react'
 import './App.css'
 import Headline from './Headline'
 import Form from './Form/Form'
-import ShoppingList from './Form/ShoppingList'
+import ShoppingItem from './Form/ShoppingItem'
+// import ShoppingList from './Form/ShoppingList'
 
 function App() {
   const [shoppingItems, setShoppingItems] = useState([])
@@ -14,8 +15,9 @@ function App() {
     setShoppingItems([...shoppingItems, newShoppingItem]);
   }
 
-  function toggleCheckbox({indexToToggle}) {
-    const itemToToggle = shoppingItems.find((item, index) => index === itemToToggle)
+  function toggleCheckbox(indexToToggle) {
+    const itemToToggle = shoppingItems.find((item, index) => index === indexToToggle)
+
     itemToToggle.isDone = !itemToToggle.isDone
     const firstHalf = shoppingItems.slice(0, indexToToggle)
     const secondHalf = shoppingItems.slice(indexToToggle + 1)
@@ -28,7 +30,11 @@ function App() {
     <div className="App">
       <Headline name="Harry" />
       <Form onCreateShoppingItem={addShoppingItem} />
-      <ShoppingList items={shoppingItems} onToggleItem={toggleCheckbox} />
+      {shoppingItems.map((shoppingItem, index) => 
+      (<ShoppingItem
+        title={shoppingItem.title}
+        isDone={shoppingItem.isDone}
+        onToggleItem={() => toggleCheckbox(index)} />))}
     </div>
   );
 }
