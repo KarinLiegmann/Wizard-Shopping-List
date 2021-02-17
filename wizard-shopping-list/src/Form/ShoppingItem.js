@@ -1,14 +1,14 @@
-import './ShoppingList.css'
-
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-
-export default function ShoppingItem({ isDone, title, onToggleItem }) {
+export default function ShoppingItem({ isDone, title, onToggleItem, onDeleteItem, placeHolderText }) {
     return (
-        <li>            
+        <ListItem>            
                 <input type="checkbox" checked={isDone} onChange={onToggleItem} />
-                {title}            
-        </li>
+                {title}
+
+                <DeleteIcon onClick={onDeleteItem}>&times;</DeleteIcon>            
+        </ListItem>
     )
 }
 
@@ -18,3 +18,14 @@ ShoppingItem.propTypes = {
     onToggleItem: PropTypes.func,
 }
 
+const ListItem = styled.li`
+list-style: none;
+margin-top: 0.5rem;
+`
+
+const DeleteIcon = styled.span`
+color: red;
+cursor: pointer;
+font-weight: bold;
+margin-left: 0.5rem;
+`

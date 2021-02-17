@@ -1,5 +1,3 @@
-// import './ShoppingList.css'
-
 // import ShoppingItem from './ShoppingItem'
 
 /* export default function ShoppingList({ items, onToggleItem }) {
