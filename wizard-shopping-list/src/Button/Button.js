@@ -1,7 +1,21 @@
-import './Button.css'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 export default function Button({ type, text }) {
     return (
-        <button type={type}>{text}</button>
+        <MainButton type={type}>{text}</MainButton>
     )
 }
+
+Button.propTypes = {
+    text: PropTypes.string.isRequired,
+}
+
+const MainButton = styled.button`
+    background: rebeccapurple;
+    border: none;
+    border-radius: 4px;
+    color: ivory;
+    font-size: 1rem;
+    padding: .5rem 1.5rem; 
+`
