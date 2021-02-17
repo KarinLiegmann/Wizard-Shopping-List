@@ -30,11 +30,13 @@ function App() {
     <div className="App">
       <Headline name="Harry" />
       <Form onCreateShoppingItem={addShoppingItem} />
-      {shoppingItems.map((shoppingItem, index) => 
+      {
+      shoppingItems.map((shoppingItem, index) => 
       (<ShoppingItem
         title={shoppingItem.title}
         isDone={shoppingItem.isDone}
-        onToggleItem={() => toggleCheckbox(index)} />))}
+        onToggleItem={() => toggleCheckbox(index)} />))
+        }
     </div>
   );
 }

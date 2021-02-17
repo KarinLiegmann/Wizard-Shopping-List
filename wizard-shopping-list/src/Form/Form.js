@@ -1,5 +1,6 @@
 import './Form.css'
 
+import PropTypes from 'prop-types'
 import Button from '../Button/Button'
 
 
@@ -23,4 +24,8 @@ export default function Form({ onCreateShoppingItem }) {
             <Button type="submit" text="Add to List" />
         </form>
     )
+}
+
+Form.propTypes = {
+    onCreateShoppingItem: PropTypes.func,
 }
