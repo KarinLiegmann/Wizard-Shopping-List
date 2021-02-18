@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { v4 as uuidv4 } from 'uuid'
 
-export default function ShoppingItem({ isDone, title, onToggleItem, onDeleteItem, placeHolderText }) {
+export default function ShoppingItem({ isDone, title, onToggleItem, onDeleteItem, id }) {
     return (
         <ListItem>            
-                <input type="checkbox" checked={isDone} onChange={onToggleItem} />
+                <input type="checkbox" checked={isDone} id={id} onChange={onToggleItem}/>
                 {title}
 
                 <DeleteIcon onClick={onDeleteItem}>&times;</DeleteIcon>            
