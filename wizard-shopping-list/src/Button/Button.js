@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-export default function Button({ type, text }) {
+export default function Button({ text, onClickFunction}) {
     return (
-        <MainButton type={type}>{text}</MainButton>
+        <MainButton onClick={onClickFunction}>{text}</MainButton>
     )
 }
 
@@ -17,5 +17,13 @@ const MainButton = styled.button`
     border-radius: 4px;
     color: ivory;
     font-size: 1rem;
-    padding: .5rem 1.5rem; 
+    margin-bottom: 1rem;
+    padding: .5rem 1.5rem;    
+    width: 100%;
+    box-shadow: 4px 4px 4px lightgray;
+
+    &:hover {
+        transform: scale(1.1);
+        color: lightgray;
+    } 
 `

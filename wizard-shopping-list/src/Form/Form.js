@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import Button from '../Button/Button'
 
 
-export default function Form({ onCreateShoppingItem }) {
+export default function Form({ onCreateShoppingItem, onClickFunction }) {
     function handleSubmit(event) {
         event.preventDefault();
         const form = event.target; // Get the form element by the event
         const input = form.title; // The name attribute of the input field
-        onCreateShoppingItem(input.value);
+        if (input.value !== '') onCreateShoppingItem(input.value);
         form.reset();
         input.focus();
     }
@@ -20,7 +20,7 @@ export default function Form({ onCreateShoppingItem }) {
             <br />
             <input name="title" type="text" id="shoppinglist" placeholder="What else needs to be bought?"></input>
             <br />
-            <Button type="submit" text="Add to List" />
+            <Button text="Add to List" />            
         </FormWrapper>
     )
 }
