@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid'
 
-export default function ShoppingItem({ isDone, title, onToggleItem, onDeleteItem, id }) {
+export default function ShoppingItem({ isDone, title, onToggleItem, onDeleteItem, id, isVisible }) {
     return (
-        <ListItem>            
+        <ListItem isVisible={isVisible}>            
                 <Checkbox type="checkbox" checked={isDone} id={id} onChange={onToggleItem}/>
                 {title}
 
@@ -22,6 +22,7 @@ ShoppingItem.propTypes = {
 const ListItem = styled.li`
 list-style: none;
 margin-top: 0.5rem;
+display: ${props => props.isVisible ? 'block' : 'none'};
 `
 
 const DeleteIcon = styled.span`
